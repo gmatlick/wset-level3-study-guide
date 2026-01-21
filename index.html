@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSET Level 3 Mastery — Your Path to Distinction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-main">WSET</span>
+                <span class="logo-sub">Level 3 Mastery</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Study<span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="viticulture.html">Viticulture & Winemaking</a></li>
+                        <li><a href="france.html">France</a></li>
+                        <li><a href="italy.html">Italy</a></li>
+                        <li><a href="spain-portugal.html">Spain & Portugal</a></li>
+                        <li><a href="germany-austria.html">Germany & Austria</a></li>
+                        <li><a href="new-world.html">New World</a></li>
+                        <li><a href="sparkling.html">Sparkling Wines</a></li>
+                        <li><a href="fortified.html">Fortified Wines</a></li>
+                    </ul>
+                </li>
+                <li><a href="tasting.html" class="nav-link">Tasting</a></li>
+                <li><a href="exam-prep.html" class="nav-link">Exam Prep</a></li>
+                <li><a href="progress.html" class="nav-link nav-cta">Track Progress</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">WSET Level 3 Award in Wines</div>
+            <h1 class="hero-title">
+                <span class="title-line">Master the</span>
+                <span class="title-line title-emphasis">Wines of the World</span>
+            </h1>
+            <p class="hero-subtitle">Your comprehensive guide to achieving distinction on the WSET Level 3 examination</p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-value">55%</div>
+                    <div class="stat-label">Pass</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">65%</div>
+                    <div class="stat-label">Merit</div>
+                </div>
+                <div class="stat-card stat-highlight">
+                    <div class="stat-value">80%</div>
+                    <div class="stat-label">Distinction</div>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="viticulture.html" class="btn btn-primary">Start Learning</a>
+                <a href="#exam-structure" class="btn btn-secondary">Exam Details</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- Quick Navigation Cards -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="quick-nav-grid">
+                <a href="viticulture.html" class="quick-card" style="animation-delay: 0.1s">
+                    <div class="quick-icon">🌱</div>
+                    <h3>Viticulture</h3>
+                    <p>Climate, soil, vineyard management, and natural factors</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                
+                <a href="france.html" class="quick-card" style="animation-delay: 0.2s">
+                    <div class="quick-icon">🇫🇷</div>
+                    <h3>France</h3>
+                    <p>Bordeaux, Burgundy, Rhône, Loire, and beyond</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                
+                <a href="italy.html" class="quick-card" style="animation-delay: 0.3s">
+                    <div class="quick-icon">🇮🇹</div>
+                    <h3>Italy</h3>
+                    <p>Barolo, Brunello, Amarone, and Italian classics</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                
+                <a href="sparkling.html" class="quick-card" style="animation-delay: 0.4s">
+                    <div class="quick-icon">🥂</div>
+                    <h3>Sparkling</h3>
+                    <p>Champagne, Cava, Prosecco production methods</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                
+                <a href="tasting.html" class="quick-card" style="animation-delay: 0.5s">
+                    <div class="quick-icon">👁️</div>
+                    <h3>Tasting</h3>
+                    <p>WSET Systematic Approach and blind tasting</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                
+                <a href="exam-prep.html" class="quick-card" style="animation-delay: 0.6s">
+                    <div class="quick-icon">📝</div>
+                    <h3>Practice</h3>
+                    <p>Mock exams, MCQs, and timed questions</p>
+                    <span class="card-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Structure -->
+    <section class="section" id="exam-structure">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What to Expect</span>
+                <h2 class="section-title">Examination Structure</h2>
+                <p class="section-description">Two units testing theory and practical tasting ability</p>
+            </div>
+
+            <div class="exam-grid">
+                <div class="exam-unit">
+                    <div class="exam-unit-header">
+                        <span class="unit-badge">Unit 1</span>
+                        <h3>Theory Examination</h3>
+                        <div class="unit-time">2 hours</div>
+                    </div>
+                    
+                    <div class="exam-parts">
+                        <div class="exam-part">
+                            <h4>Part 1: Multiple Choice</h4>
+                            <ul>
+                                <li>50 questions (1 mark each)</li>
+                                <li>55% required to pass</li>
+                                <li>Tests knowledge across all learning outcomes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="exam-part">
+                            <h4>Part 2: Short Written Answers</h4>
+                            <ul>
+                                <li>4 questions (25 marks each)</li>
+                                <li>100 marks total</li>
+                                <li>55% required to pass</li>
+                                <li>Tests application of knowledge</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="exam-tip">
+                        <strong>Strategy:</strong> Allow 2.4 minutes per MCQ, 30 minutes per written answer
+                    </div>
+                </div>
+
+                <div class="exam-unit">
+                    <div class="exam-unit-header">
+                        <span class="unit-badge">Unit 2</span>
+                        <h3>Tasting Examination</h3>
+                        <div class="unit-time">30 minutes</div>
+                    </div>
+                    
+                    <div class="exam-parts">
+                        <div class="exam-part">
+                            <h4>Blind Tasting</h4>
+                            <ul>
+                                <li>2 still wines (1 white, 1 red)</li>
+                                <li>41 marks total</li>
+                                <li>55% required to pass</li>
+                                <li>WSET Level 3 Systematic Approach</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="exam-part">
+                            <h4>Assessment Criteria</h4>
+                            <ul>
+                                <li>Accurate description of appearance, nose, palate</li>
+                                <li>Quality assessment</li>
+                                <li>Readiness for drinking evaluation</li>
+                                <li>Precision in technical terminology</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="exam-tip">
+                        <strong>Strategy:</strong> Practice the SAT daily until it becomes automatic
+                    </div>
+                </div>
+            </div>
+
+            <div class="grading-scale">
+                <h3>Grading Scale</h3>
+                <div class="grade-bars">
+                    <div class="grade-bar grade-distinction">
+                        <div class="grade-label">Distinction</div>
+                        <div class="grade-range">80%+ (no paper below 65%)</div>
+                    </div>
+                    <div class="grade-bar grade-merit">
+                        <div class="grade-label">Merit</div>
+                        <div class="grade-range">65-79%</div>
+                    </div>
+                    <div class="grade-bar grade-pass">
+                        <div class="grade-label">Pass</div>
+                        <div class="grade-range">55-64%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Path -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Your Journey</span>
+                <h2 class="section-title">12-Week Study Path</h2>
+                <p class="section-description">Structured progression from fundamentals to exam mastery</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1-2</div>
+                    <div class="timeline-content">
+                        <h3>Foundation Building</h3>
+                        <ul>
+                            <li>Master viticulture principles</li>
+                            <li>Understand winemaking techniques</li>
+                            <li>Learn WSET Systematic Approach</li>
+                            <li>Begin daily tasting practice</li>
+                        </ul>
+                        <a href="viticulture.html" class="timeline-link">Start Here →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3-5</div>
+                    <div class="timeline-content">
+                        <h3>France Deep Dive</h3>
+                        <ul>
+                            <li>Bordeaux classification and regions</li>
+                            <li>Burgundy appellations and climats</li>
+                            <li>Loire, Rhône, Alsace</li>
+                            <li>Southern France</li>
+                        </ul>
+                        <a href="france.html" class="timeline-link">Explore France →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">6-8</div>
+                    <div class="timeline-content">
+                        <h3>Rest of Europe</h3>
+                        <ul>
+                            <li>Italy: Piedmont, Tuscany, Veneto</li>
+                            <li>Spain: Rioja, Ribera del Duero, Priorat</li>
+                            <li>Germany & Austria: Riesling regions</li>
+                            <li>Sparkling & fortified wines</li>
+                        </ul>
+                        <a href="italy.html" class="timeline-link">Continue Learning →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">9-10</div>
+                    <div class="timeline-content">
+                        <h3>New World</h3>
+                        <ul>
+                            <li>USA: California, Oregon, Washington</li>
+                            <li>Southern Hemisphere: Chile, Argentina</li>
+                            <li>Australia & New Zealand</li>
+                            <li>South Africa</li>
+                        </ul>
+                        <a href="new-world.html" class="timeline-link">Discover New World →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">11-12</div>
+                    <div class="timeline-content">
+                        <h3>Intensive Review</h3>
+                        <ul>
+                            <li>Complete all practice exams</li>
+                            <li>Timed mock examinations</li>
+                            <li>Daily blind tasting sessions</li>
+                            <li>Review weak areas</li>
+                        </ul>
+                        <a href="exam-prep.html" class="timeline-link">Practice Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Outcomes -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Core Knowledge</span>
+                <h2 class="section-title">Learning Outcomes</h2>
+            </div>
+
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <span class="outcome-number">01</span>
+                    <h3>Viticulture & Winemaking</h3>
+                    <p>Natural and human factors in vineyard and winery affecting style, quality, and price</p>
+                    <div class="outcome-topics">
+                        <span>Climate</span>
+                        <span>Soil</span>
+                        <span>Vine Management</span>
+                        <span>Production Methods</span>
+                    </div>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-number">02</span>
+                    <h3>Still Wines Worldwide</h3>
+                    <p>Principal wine regions, grape varieties, and production factors</p>
+                    <div class="outcome-topics">
+                        <span>France</span>
+                        <span>Italy</span>
+                        <span>Spain</span>
+                        <span>New World</span>
+                    </div>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-number">03</span>
+                    <h3>Sparkling Wine Production</h3>
+                    <p>Methods, regions, and factors influencing sparkling wines</p>
+                    <div class="outcome-topics">
+                        <span>Traditional Method</span>
+                        <span>Tank Method</span>
+                        <span>Champagne</span>
+                        <span>Global Styles</span>
+                    </div>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-number">04</span>
+                    <h3>Fortified Wines</h3>
+                    <p>Port, Sherry, and fortified Muscats from principal regions</p>
+                    <div class="outcome-topics">
+                        <span>Port Styles</span>
+                        <span>Sherry Production</span>
+                        <span>Sweet Muscats</span>
+                        <span>Maturation</span>
+                    </div>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-number">05</span>
+                    <h3>Service & Pairing</h3>
+                    <p>Wine service, storage, faults, and food pairing principles</p>
+                    <div class="outcome-topics">
+                        <span>Storage</span>
+                        <span>Service</span>
+                        <span>Faults</span>
+                        <span>Food Matching</span>
+                    </div>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-number">06</span>
+                    <h3>Analytical Tasting</h3>
+                    <p>WSET Level 3 Systematic Approach to wine assessment</p>
+                    <div class="outcome-topics">
+                        <span>Appearance</span>
+                        <span>Nose</span>
+                        <span>Palate</span>
+                        <span>Conclusions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips for Distinction -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Excellence</span>
+                <h2 class="section-title">Path to Distinction</h2>
+                <p class="section-description">Strategic approaches for achieving 80%+</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <h3>Be Specific</h3>
+                    <p>Don't say "Bordeaux" — specify Left Bank vs Right Bank, name exact appellations (Pauillac, Saint-Émilion), and identify grape varieties and their proportions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🔗</div>
+                    <h3>Explain Causation</h3>
+                    <p>Always connect factors to outcomes. "Cool climate → high acidity → freshness → suitability for sparkling wine production." Show you understand why, not just what.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">📖</div>
+                    <h3>Use Terminology</h3>
+                    <p>Demonstrate knowledge with precise terms: véraison, malolactic conversion, autolysis, phenolic ripeness, remontage, pigeage, bâtonnage.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">⏱️</div>
+                    <h3>Practice Writing</h3>
+                    <p>Time yourself on 25-mark questions. Aim for 30 minutes each. Structure answers clearly: introduction, main points (with subheadings), conclusion.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🍷</div>
+                    <h3>Taste Daily</h3>
+                    <p>Use the WSET SAT for every wine. Build muscle memory so you can complete assessments accurately and quickly under exam pressure.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🧠</div>
+                    <h3>Connect Concepts</h3>
+                    <p>Understand relationships: climate influences viticulture, which affects winemaking decisions, which determine final style and quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Begin Your Journey?</h2>
+                <p>Start with the fundamentals and build towards distinction</p>
+                <a href="viticulture.html" class="btn btn-primary btn-large">Start Learning Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Study Sections</h4>
+                    <ul>
+                        <li><a href="viticulture.html">Viticulture & Winemaking</a></li>
+                        <li><a href="france.html">France</a></li>
+                        <li><a href="italy.html">Italy & Spain</a></li>
+                        <li><a href="new-world.html">New World</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="tasting.html">Tasting Guide</a></li>
+                        <li><a href="exam-prep.html">Practice Exams</a></li>
+                        <li><a href="progress.html">Track Progress</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Study Guide Info</a></li>
+                        <li><a href="https://www.wsetglobal.com" target="_blank">Official WSET Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 WSET Level 3 Study Guide. For educational purposes only.</p>
+                <p>Based on WSET Level 3 Award in Wines Specification (Issue 2, 2022)</p>
+                <p class="disclaimer">This is an independent study resource and is not affiliated with or endorsed by WSET®</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
