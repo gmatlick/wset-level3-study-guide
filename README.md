@@ -1,177 +1,113 @@
-# WSET Level 3 Award in Wines - Complete Study Guide
+# WSET Level 3 Award in Wines - Study Guide
 
-A comprehensive, interactive study guide designed to help candidates achieve distinction (80%+) on the WSET Level 3 Award in Wines examination.
+A beautifully designed, comprehensive study guide for achieving distinction on the WSET Level 3 examination.
 
-## Live Site
+## 🎯 Features
 
-Visit the study guide at: [Your GitHub Pages URL will go here]
+- **Sophisticated Design**: Wine-themed aesthetics with elegant typography (Cormorant Garamond & Manrope)
+- **Smooth Animations**: Fade-in effects, scroll animations, and micro-interactions
+- **Fully Responsive**: Perfect on desktop, tablet, and mobile
+- **Interactive Tools**: Progress tracking, study timer, flashcards, and quizzes
+- **Comprehensive Content**: All 6 learning outcomes covered in detail
+- **Exam Focused**: MCQ practice, short answer examples, and tasting guides
 
-## Features
+## 📚 Site Structure
 
-- **Complete Coverage**: All learning outcomes from the official WSET Level 3 specification
-- **Interactive Study Tools**: Flashcards, practice quizzes, progress tracking
-- **Detailed Content**:
-  - Viticulture & Winemaking fundamentals
-  - All major wine regions worldwide
-  - Sparkling wine production methods
-  - Fortified wine styles
-  - WSET Level 3 Systematic Approach to Tasting
-- **Exam Preparation**: Practice MCQs and short answer questions
-- **Mobile Responsive**: Study on any device
-- **Progress Tracking**: Track your study completion
+```
+├── index.html          # Homepage with exam overview
+├── viticulture.html    # Viticulture & winemaking
+├── france.html         # French wine regions
+├── italy.html          # Italian wines
+├── spain-portugal.html # Iberian Peninsula
+├── germany-austria.html # Germanic regions
+├── new-world.html      # Americas, Australia, NZ, SA
+├── sparkling.html      # Sparkling wine production
+├── fortified.html      # Port, Sherry, Muscats
+├── tasting.html        # WSET Systematic Approach
+├── exam-prep.html      # Practice questions & strategy
+├── progress.html       # Study progress tracker
+└── styles.css          # Beautiful styling
+```
 
-## Examination Structure
+## 🚀 Deployment to GitHub Pages
 
-### Unit 1: Theory (2 hours)
-- **Part 1**: 50 multiple-choice questions (50 marks)
-- **Part 2**: 4 short written answer questions (100 marks)
-- **Pass requirement**: 55% in each part
+1. Create a new repository on GitHub
+2. Upload all files from this folder
+3. Go to Settings > Pages
+4. Select "main" branch as source
+5. Your site will be live at `https://[username].github.io/[repo-name]`
 
-### Unit 2: Tasting (30 minutes)
-- Blind tasting of 2 still wines (1 white, 1 red)
-- 41 marks total
-- **Pass requirement**: 55%
+## 🎨 Design Features
 
-### Grading
+- **Color Palette**: Sophisticated burgundy, gold, cream, and charcoal
+- **Typography**: Elegant serif headers with modern sans-serif body text
+- **Animations**: Subtle fade-ins, hover effects, and smooth transitions
+- **Layout**: Clean grid systems with generous white space
+- **Accessibility**: High contrast, readable fonts, semantic HTML
+
+## 📖 Study Recommendations
+
+### 12-Week Study Plan
+
+- **Weeks 1-2**: Viticulture & winemaking fundamentals
+- **Weeks 3-5**: France (Bordeaux, Burgundy, Loire, Rhône, Alsace)
+- **Weeks 6-8**: Rest of Europe + sparkling/fortified
+- **Weeks 9-10**: New World regions
+- **Weeks 11-12**: Intensive review & practice exams
+
+### Daily Study Routine
+
+1. Study new content (1-2 hours)
+2. Taste wines using WSET SAT (30-45 minutes)
+3. Answer practice questions (30 minutes)
+4. Review flashcards (15 minutes)
+
+## 🎯 Exam Strategy
+
+### Multiple Choice (Part 1)
+- 2.4 minutes per question
+- Read all options before answering
+- Eliminate obviously wrong answers
+- Mark uncertain questions for review
+
+### Short Answer (Part 2)
+- 30 minutes per 25-mark question
+- Structure your answer (intro, points, conclusion)
+- Be specific with region names and grape varieties
+- Always explain WHY (connect factors to outcomes)
+- Use technical terminology
+
+### Tasting (Unit 2)
+- Practice WSET SAT until automatic
+- 15 minutes per wine
+- Be methodical and complete
+- Quality assessment is critical
+
+## 📊 Grading
+
 - **Pass**: 55-64%
 - **Merit**: 65-79%
-- **Distinction**: 80%+ (with no individual paper below 65%)
+- **Distinction**: 80%+ (no paper below 65%)
 
-## Study Recommendations
+## 🛠️ Technologies Used
 
-### Timeline
-- **Minimum**: 8-10 weeks of dedicated study
-- **Recommended**: 12 weeks with 10-15 hours per week
-- **Total Qualification Time**: 84 hours (32.5 GLH + 51.5 private study)
+- Pure HTML5, CSS3, JavaScript
+- Google Fonts (Cormorant Garamond, Manrope)
+- CSS Grid & Flexbox
+- CSS Custom Properties
+- Intersection Observer API
+- LocalStorage for progress tracking
 
-### Study Strategy
-1. Master viticulture and winemaking principles first
-2. Study regions systematically (France requires 3+ weeks)
-3. Practice blind tasting daily using the WSET SAT
-4. Answer practice questions under timed conditions
-5. Review and connect concepts across regions
+## 📝 License
 
-## Content Structure
+Educational use only. WSET® is a registered trademark of the Wine & Spirit Education Trust.
 
-```
-/
-├── index.html              # Homepage and exam overview
-├── viticulture.html        # Learning Outcome 1: Viticulture & Winemaking
-├── regions.html            # Learning Outcome 2: Still Wines of the World
-├── sparkling.html          # Learning Outcome 3: Sparkling Wines
-├── fortified.html          # Learning Outcome 4: Fortified Wines
-├── service.html            # Learning Outcome 5: Service & Pairing
-├── tasting.html            # Learning Outcome 6: Analytical Tasting
-├── exam-prep.html          # Practice questions and exam strategy
-├── styles.css              # Main stylesheet
-├── script.js               # Interactive features
-└── README.md              # This file
-```
+## 🙏 Acknowledgments
 
-## Key Topics Covered
+Based on the official WSET Level 3 Award in Wines Specification (Issue 2, 2022).
 
-### Viticulture
-- Vine structure and needs
-- Climate types and factors
-- Soil properties
-- Vineyard management (training, pruning, density)
-- Hazards (frost, hail, disease, pests)
-- Organic, biodynamic, sustainable approaches
-- Sugar concentration methods
-
-### Winemaking
-- Oxygen and SO₂ roles
-- White wine production
-- Red wine production (including carbonic maceration)
-- Rosé methods
-- Sweet wine techniques
-- Oak maturation
-- Clarification and stabilization
-
-### Wine Regions (Essential)
-- **France**: Bordeaux, Burgundy, Beaujolais, Alsace, Loire, Rhône, Southern France
-- **Italy**: Piedmont, Tuscany, Veneto, Friuli, Sicily
-- **Spain**: Rioja, Ribera del Duero, Priorat, Rías Baixas
-- **Germany**: Mosel, Rheingau, Pfalz
-- **Portugal**: Douro, Vinho Verde, Dão
-- **USA**: California (Napa, Sonoma), Oregon, Washington
-- **Chile**: Central Valley, Aconcagua, Coquimbo
-- **Argentina**: Mendoza (Uco Valley, Luján de Cuyo)
-- **South Africa**: Stellenbosch, Paarl, Walker Bay
-- **Australia**: Barossa, Clare Valley, Margaret River
-- **New Zealand**: Marlborough, Central Otago, Hawke's Bay
-
-### Sparkling Wines
-- Traditional method (Champagne)
-- Tank method (Prosecco)
-- Transfer method
-- Asti method
-- Carbonation
-
-### Fortified Wines
-- Port (Ruby, Tawny, Vintage, LBV)
-- Sherry (Fino, Manzanilla, Amontillado, Oloroso, PX)
-- Fortified Muscats (Rutherglen, Beaumes-de-Venise)
-
-## Tips for Distinction
-
-1. **Be Specific**: Don't just say "Bordeaux" - name specific appellations and their characteristics
-2. **Explain Why**: Always connect factors to their impact on style, quality, and price
-3. **Use Technical Language**: Demonstrate knowledge of proper viticulture and winemaking terminology
-4. **Practice Writing**: Time yourself on 25-mark questions (30 minutes each)
-5. **Taste Systematically**: Use the WSET SAT for every wine to build muscle memory
-6. **Connect Concepts**: Understand how climate → viticulture → winemaking → style
-
-## Deployment to GitHub Pages
-
-1. Fork or clone this repository
-2. Go to Settings > Pages
-3. Select "main" branch as source
-4. Your site will be published at `https://[username].github.io/[repository-name]`
-
-## Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/[username]/wset-level3-study-guide.git
-
-# Navigate to directory
-cd wset-level3-study-guide
-
-# Open in browser
-# Simply open index.html in your web browser
-# Or use a local server:
-python3 -m http.server 8000
-# Then visit http://localhost:8000
-```
-
-## Contributing
-
-This is a study guide based on the official WSET Level 3 specification. While content additions and corrections are welcome, please ensure they align with the official learning outcomes.
-
-## Disclaimer
-
-This study guide is an independent educational resource and is not affiliated with or endorsed by the Wine & Spirit Education Trust (WSET). It is based on the publicly available WSET Level 3 Award in Wines Specification (Issue 2, 2022).
-
-For official WSET resources, visit [wsetglobal.com](https://www.wsetglobal.com)
-
-## Resources
-
-- **Official WSET Site**: https://www.wsetglobal.com
-- **WSET Documentation**: https://docs.claude.com
-- **WSET Support**: https://support.claude.com
-
-## License
-
-This project is for educational purposes. WSET® is a registered trademark of the Wine & Spirit Education Trust.
-
-## Good Luck!
-
-Remember: The goal is not just to pass, but to deeply understand the wines of the world. This knowledge will serve you throughout your wine career.
-
-**Target**: 80%+ for Distinction
-**Your Success**: Starts Now
+For official resources, visit [wsetglobal.com](https://www.wsetglobal.com)
 
 ---
 
-*Last Updated: January 2026*
+**Good luck on your journey to distinction!** 🍷
