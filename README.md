@@ -1,5 +1,5 @@
-# 🍷 COMPLETE WSET Level 3 Study Guide
-This website is an independent, unofficial study aid created by a WSET Level 3 candidate for personal educational purposes.
+# 🍷 COMPLETE Wine Education Study Guide
+This website is an independent, unofficial study aid created for personal educational purposes.
 
 It is not affiliated with, endorsed by, or sponsored by the Wine & Spirit Education Trust (WSET). All trademarks, course titles, and referenced materials remain the property of their respective owners.
 
