@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz System | WSET Level 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .quiz-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .quiz-card h3 {
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+        
+        .progress-container {
+            margin: 1.5rem 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #dc3545, #ffc107);
+            transition: width 0.5s ease, background 0.5s ease;
+            border-radius: 15px;
+        }
+        
+        .progress-fill.pass {
+            background: linear-gradient(90deg, #ffc107, #28a745);
+        }
+        
+        .progress-fill.merit {
+            background: linear-gradient(90deg, #28a745, #20c997);
+        }
+        
+        .progress-fill.distinction {
+            background: linear-gradient(90deg, #20c997, #17a2b8, #007bff);
+        }
+        
+        .progress-text {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+        
+        .quiz-interface {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .question-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .option {
+            background: white;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .option:hover {
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+        
+        .option.selected {
+            border-color: var(--burgundy);
+            background: var(--cream);
+        }
+        
+        .option.correct {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        
+        .option.incorrect {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+        
+        .quiz-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        
+        .overall-progress {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .badge-fail { background: #f8d7da; color: #721c24; }
+        .badge-pass { background: #fff3cd; color: #856404; }
+        .badge-merit { background: #d4edda; color: #155724; }
+        .badge-distinction { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+            <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-main">WSET</span>
+                <span class="logo-sub">Level 3 Mastery</span>
+            </a>
+            <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="viticulture.html" class="nav-link">Viticulture</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Europe ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="france.html">France</a></li>
+                        <li><a href="germany.html">Germany</a></li>
+                        <li><a href="austria.html">Austria</a></li>
+                        <li><a href="hungary.html">Hungary</a></li>
+                        <li><a href="greece.html">Greece</a></li>
+                        <li><a href="italy.html">Italy</a></li>
+                        <li><a href="spain.html">Spain</a></li>
+                        <li><a href="portugal.html">Portugal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">New World ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="california.html">California</a></li>
+                        <li><a href="usa-other.html">Oregon/WA/NY</a></li>
+                        <li><a href="south-africa.html">South Africa</a></li>
+                        <li><a href="australia.html">Australia</a></li>
+                        <li><a href="new-zealand.html">New Zealand</a></li>
+                        <li><a href="south-america.html">South America</a></li>
+                        <li><a href="canada.html">Canada</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Styles ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sparkling.html">Sparkling Wines</a></li>
+                        <li><a href="fortified.html">Fortified Wines</a></li>
+                    </ul>
+                </li>
+                <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero" style="min-height: 40vh;">
+        <div class="hero-content">
+            <h1>📚 Quiz System</h1>
+            <p class="hero-subtitle">Test your WSET Level 3 knowledge</p>
+        </div>
+    </div>
+
+    <main class="container" id="mainContainer">
+        <!-- Quiz Selection View -->
+        <div id="quizSelection">
+            <div class="overall-progress">
+                <h2 style="color: var(--burgundy); margin-bottom: 1.5rem;">📊 Overall Progress</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overallProgressBar"></div>
+                    </div>
+                    <div class="progress-text" id="overallProgressText">0% Complete</div>
+                </div>
+                <p style="margin-top: 1.5rem; text-align: center;">
+                    <span class="badge badge-fail">0-54%: Needs Work</span>
+                    <span class="badge badge-pass">55-64%: Pass</span>
+                    <span class="badge badge-merit">65-79%: Merit</span>
+                    <span class="badge badge-distinction">80-100%: Distinction</span>
+                </p>
+            </div>
+
+            <h2 style="color: var(--burgundy); text-align: center; margin: 3rem 0 2rem;">Select a Quiz Topic</h2>
+            
+            <h3 style="color: var(--burgundy); margin: 2rem 0 1rem;">Foundation Topics</h3>
+            <div class="quiz-grid" id="foundationQuizzes"></div>
+            
+            <h3 style="color: var(--burgundy); margin: 3rem 0 1rem;">Regional Quizzes</h3>
+            <div class="quiz-grid" id="regionalQuizzes"></div>
+        </div>
+
+        <!-- Quiz Taking View -->
+        <div id="quizInterface" style="display: none;">
+            <div class="quiz-interface">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <button onclick="returnToSelection()" class="btn btn-secondary">← Back to Quiz Selection</button>
+                </div>
+                
+                <h2 id="quizTitle" style="color: var(--burgundy); text-align: center;"></h2>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="quizProgressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">1</span> / <span id="totalQuestions">20</span>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h3 id="questionText" style="color: var(--burgundy);"></h3>
+                    <div id="optionsContainer"></div>
+                </div>
+
+                <div class="quiz-nav-buttons">
+                    <button onclick="previousQuestion()" id="prevBtn" class="btn btn-secondary">← Previous</button>
+                    <button onclick="nextQuestion()" id="nextBtn" class="btn btn-primary">Next →</button>
+                    <button onclick="submitQuiz()" id="submitBtn" class="btn" style="display: none; background: var(--burgundy); color: white;">Submit Quiz</button>
+                </div>
+
+                <div id="resultContainer" style="display: none; margin-top: 2rem; text-align: center;">
+                    <h3 style="color: var(--burgundy);">Quiz Results</h3>
+                    <p id="scoreText" style="font-size: 2rem; font-weight: 700; margin: 1rem 0;"></p>
+                    <p id="gradeText" style="font-size: 1.5rem; margin: 1rem 0;"></p>
+                    <button onclick="resetQuiz()" class="btn btn-primary">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 WSET Level 3 Study Guide</p></div>
+    </footer>
+
+    <script src="quiz-data.js"></script>
+    <script>
+        // Quiz State Management
+        let currentQuizKey = '';
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let quizSubmitted = false;
+
+        // Initialize quizzes
+        const allQuizzes = {
+            viticulture: { name: 'Viticulture', category: 'foundation' },
+            winemaking: { name: 'Winemaking', category: 'foundation' },
+            service: { name: 'Service & Storage', category: 'foundation' },
+            austria: { name: 'Austria', category: 'regional' },
+            hungary: { name: 'Hungary (Tokaj)', category: 'regional' },
+            greece: { name: 'Greece', category: 'regional' },
+            southAfrica: { name: 'South Africa', category: 'regional' }
+        };
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const saved = localStorage.getItem('wsetQuizProgress');
+            return saved ? JSON.parse(saved) : {};
+        }
+
+        // Save progress
+        function saveProgress(quizKey, score) {
+            const progress = loadProgress();
+            progress[quizKey] = score;
+            localStorage.setItem('wsetQuizProgress', JSON.stringify(progress));
+            updateOverallProgress();
+        }
+
+        // Calculate overall progress
+        function updateOverallProgress() {
+            const progress = loadProgress();
+            const quizKeys = Object.keys(allQuizzes);
+            let totalScore = 0;
+            let completedQuizzes = 0;
+
+            quizKeys.forEach(key => {
+                if (progress[key] !== undefined) {
+                    totalScore += progress[key];
+                    completedQuizzes++;
+                }
+            });
+
+            const overallPercent = completedQuizzes > 0 ? Math.round(totalScore / completedQuizzes) : 0;
+            const progressBar = document.getElementById('overallProgressBar');
+            const progressText = document.getElementById('overallProgressText');
+
+            progressBar.style.width = overallPercent + '%';
+            progressText.textContent = overallPercent + '% Complete (' + completedQuizzes + '/' + quizKeys.length + ' quizzes)';
+
+            // Update color based on grade
+            progressBar.className = 'progress-fill';
+            if (overallPercent >= 80) progressBar.classList.add('distinction');
+            else if (overallPercent >= 65) progressBar.classList.add('merit');
+            else if (overallPercent >= 55) progressBar.classList.add('pass');
+        }
+
+        // Render quiz cards
+        function renderQuizSelection() {
+            const foundationContainer = document.getElementById('foundationQuizzes');
+            const regionalContainer = document.getElementById('regionalQuizzes');
+            const progress = loadProgress();
+
+            foundationContainer.innerHTML = '';
+            regionalContainer.innerHTML = '';
+
+            Object.entries(allQuizzes).forEach(([key, quiz]) => {
+                const card = document.createElement('div');
+                card.className = 'quiz-card';
+                card.onclick = () => startQuiz(key);
+
+                const score = progress[key];
+                const scorePercent = score !== undefined ? score : 0;
+                let gradeClass = '';
+                let gradeBadge = '';
+
+                if (scorePercent >= 80) {
+                    gradeClass = 'distinction';
+                    gradeBadge = '<span class="badge badge-distinction">Distinction</span>';
+                } else if (scorePercent >= 65) {
+                    gradeClass = 'merit';
+                    gradeBadge = '<span class="badge badge-merit">Merit</span>';
+                } else if (scorePercent >= 55) {
+                    gradeClass = 'pass';
+                    gradeBadge = '<span class="badge badge-pass">Pass</span>';
+                } else if (score !== undefined) {
+                    gradeClass = '';
+                    gradeBadge = '<span class="badge badge-fail">Needs Work</span>';
+                }
+
+                card.innerHTML = `
+                    <h3>${quiz.name}</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill ${gradeClass}" style="width: ${scorePercent}%"></div>
+                        </div>
+                        <div class="progress-text">${score !== undefined ? scorePercent + '%' : 'Not Started'}</div>
+                    </div>
+                    ${gradeBadge}
+                `;
+
+                if (quiz.category === 'foundation') {
+                    foundationContainer.appendChild(card);
+                } else {
+                    regionalContainer.appendChild(card);
+                }
+            });
+
+            updateOverallProgress();
+        }
+
+        // Start quiz
+        function startQuiz(quizKey) {
+            currentQuizKey = quizKey;
+            currentQuestionIndex = 0;
+            userAnswers = new Array(20).fill(null);
+            quizSubmitted = false;
+
+            document.getElementById('quizSelection').style.display = 'none';
+            document.getElementById('quizInterface').style.display = 'block';
+            document.getElementById('quizTitle').textContent = allQuizzes[quizKey].name + ' Quiz';
+            document.getElementById('totalQuestions').textContent = '20';
+
+            loadQuestion();
+        }
+
+        // Load question
+        function loadQuestion() {
+            const questions = quizData[currentQuizKey]?.questions || [];
+            if (questions.length === 0) {
+                alert('Quiz questions not available yet!');
+                returnToSelection();
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            document.getElementById('questionText').textContent = (currentQuestionIndex + 1) + '. ' + question.q;
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                if (userAnswers[currentQuestionIndex] === index) {
+                    optionDiv.classList.add('selected');
+                }
+                
+                if (quizSubmitted) {
+                    if (index === question.correct) {
+                        optionDiv.classList.add('correct');
+                    } else if (userAnswers[currentQuestionIndex] === index) {
+                        optionDiv.classList.add('incorrect');
+                    }
+                    optionDiv.style.cursor = 'default';
+                } else {
+                    optionDiv.onclick = () => selectOption(index);
+                }
+
+                optionDiv.textContent = option;
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            // Update buttons
+            document.getElementById('prevBtn').style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
+            document.getElementById('nextBtn').style.display = currentQuestionIndex === 19 || quizSubmitted ? 'none' : 'inline-block';
+            document.getElementById('submitBtn').style.display = currentQuestionIndex === 19 && !quizSubmitted ? 'inline-block' : 'none';
+            document.getElementById('resultContainer').style.display = quizSubmitted ? 'block' : 'none';
+
+            // Update progress bar
+            const progress = ((currentQuestionIndex + 1) / 20) * 100;
+            document.getElementById('quizProgressBar').style.width = progress + '%';
+        }
+
+        // Select option
+        function selectOption(index) {
+            if (quizSubmitted) return;
+            userAnswers[currentQuestionIndex] = index;
+            loadQuestion();
+        }
+
+        // Navigation
+        function nextQuestion() {
+            if (currentQuestionIndex < 19) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            quizSubmitted = true;
+            const questions = quizData[currentQuizKey].questions;
+            let correctCount = 0;
+
+            questions.forEach((q, i) => {
+                if (userAnswers[i] === q.correct) correctCount++;
+            });
+
+            const scorePercent = Math.round((correctCount / 20) * 100);
+            saveProgress(currentQuizKey, scorePercent);
+
+            let grade = '';
+            if (scorePercent >= 80) grade = '🌟 Distinction!';
+            else if (scorePercent >= 65) grade = '⭐ Merit';
+            else if (scorePercent >= 55) grade = '✓ Pass';
+            else grade = '✗ Needs More Study';
+
+            document.getElementById('scoreText').textContent = correctCount + ' / 20 (' + scorePercent + '%)';
+            document.getElementById('gradeText').textContent = grade;
+
+            loadQuestion();
+        }
+
+        // Reset quiz
+        function resetQuiz() {
+            startQuiz(currentQuizKey);
+        }
+
+        // Return to selection
+        function returnToSelection() {
+            document.getElementById('quizSelection').style.display = 'block';
+            document.getElementById('quizInterface').style.display = 'none';
+            renderQuizSelection();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderQuizSelection();
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
