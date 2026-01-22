@@ -1,4 +1,4 @@
-// Comprehensive WSET Level 3 Quiz Data
+// Comprehensive Wine Education Quiz Data
 const quizData = {
     viticulture: {
         name: "Viticulture",
